@@ -4,6 +4,8 @@ export default{
 
   data(){
     return{
+      
+      // email: '',
 
       emails: []
     }
@@ -21,8 +23,8 @@ export default{
     for (let i = 0; i < 10; i++) {
 
       axios
-    .get('https://flynn.boolean.careers/exercises/api/random/mail')
-    .then((response) => {
+      .get('https://flynn.boolean.careers/exercises/api/random/mail')
+      .then((response) => {
       console.log(response);
       this.emails.push(response.data.response)
     })
@@ -41,7 +43,14 @@ export default{
 
 <template>
 
-  <div>{{ emails }}</div>
+  <!-- <div>{{ email }}</div> -->
+
+  <div v-for="email in emails">
+
+    {{ email }}
+
+  </div>
+
 
 </template>
 
